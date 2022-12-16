@@ -1,8 +1,9 @@
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import CartWidget from '../CartWidget/CartWidget';
+import { Link, NavLink } from 'react-router-dom'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+import CartWidget from '../CartWidget/CartWidget'
 
 import './NavBar.css'
 
@@ -13,17 +14,24 @@ const NavBar = (   ) => {
         <>
             <Navbar collapseOnSelect expand="lg" bg="pink" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">Perfumeria Hoy</Navbar.Brand>
+                   <div className='m-5'>
+                        <NavLink className={ ( {isActive} )=> isActive ? 'btn btn-success' : 'btn btn-outline-success'} to='/node_modules'>Perfumería Hoy</NavLink>
+                    </div>                
+                    
+                
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link className='text-danger' href="#features">Perfumes</Nav.Link>
-                        <Nav.Link className='text-danger' href="#pricing">Cremas</Nav.Link>
-                        <Nav.Link className='text-danger' href="#deets">Maquillaje</Nav.Link>
+                        <NavLink className={ ( {isActive} )=> isActive ? 'btn btn-success' : 'btn btn-outline-success'} 
+                            to="/categoria/perfumes">Perfumes</NavLink>
+                        <NavLink className={ ( {isActive} )=> isActive ? 'btn btn-success' : 'btn btn-outline-success'} 
+                            to="/categoria/cremas">Cremas</NavLink>
+                        <NavLink className={ ( {isActive} )=> isActive ? 'btn btn-success' : 'btn btn-outline-success'} 
+                            to="/categoria/maquillajes">Maquillajes</NavLink>
                     </Nav>
-                    <Nav.Link href="#">
+                    <NavLink href="#">
                         <CartWidget    />
-                    </Nav.Link>
+                    </NavLink>
                     
                     </Navbar.Collapse>
                 </Container>
