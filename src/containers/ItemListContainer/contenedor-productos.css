@@ -1,0 +1,42 @@
+.contenedor-productos{
+  display:grid;
+  width: 75%;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  justify-content: center;
+  gap: 20px;
+}
+.item {
+    text-align: center;
+}  
+.item .zoom {
+      overflow: hidden;
+}      
+.item .zoom img {
+        width:90%;
+  
+
+}
+    
+.item  a {
+      text-decoration: none;
+      transition: ease-out 0.4s;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: blueviolet;
+      background-color: bisque;
+      border-radius: 2rem;
+
+}
+.item img {
+  border-radius: 1rem!important;
+}
+@media (max-width: 500px) {
+    .contenedor-productos{
+        width: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .item p {
+        font-size: 15px;
+      }
+}
+  

@@ -1,17 +1,18 @@
-import Container from 'react-bootstrap/Container';
-import carritoCompras from "../../assets/carritoCompras.png";
+import React from "react";
+import { Link } from 'react-router-dom';
+import "../CartWidget/CartWidget.css";
 
-const CartWidget = (   ) => {
-    
-    return (
-        <>
-            <Container>
-                1
-                <img src={carritoCompras} alt='imagen'/>
-                 
-            </Container>
-        </>
-    )
+
+const CartWidget = ({ count }) => {
+  return (
+      <li className='cart'>
+        <Link to='/carrito'>
+          <img src="/public/carritoCompras.png" />
+          <h3>{count}</h3>
+         
+        </Link>
+      </li>
+  );
 }
 
-export default CartWidget
+export default CartWidget;

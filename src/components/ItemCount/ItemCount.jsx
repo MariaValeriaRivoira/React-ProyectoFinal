@@ -1,38 +1,44 @@
-import { useState } from "react"
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-export const ItemCount = ( {stock = 5, initial=1,onAdd }) => {
-    const [ count, setCount] =useState(initial)
-    const [ booleano, setBooleano] = useState(true)
-    const handleCount = () => {
-        if(count < stock) {
-            setCount(count + 1)
-        }        
+const ItemCount = ({ stock = 100, inital = 1, onAdd }) => {
+  const [count, setCount] = useState(inital);
+  const [inCart, setInCart] = useState(false)
+
+  const handleCount = () => {
+    if (count < stock) {
+      setCount(count + 1);
     }
-    const restar = () => {if(count > initial) setCount(count - 1)}        
-    const handleOnAdd =() => onAdd(count)
-    return (
-        <center className="mt-5">
-            <button
-                className="btn btn-outline-primary"
-                onClick={handleCount}
-            >
-                +
-            </button>
-            <label htmlFor="">{count}</label>
-            <button
-                className="btn btn-outline-primary"
-                onClick={restar}
-            >
-                -
-            </button>
-            <br />
-            <button
-                className="btn btn-outline-primary"
-                onClick={ handleOnAdd}
-            >
-                agregar al carrito
-            </button>
-            <br></br>
-        </center>
-    )
-}
+  };
+  const restart = () => {
+    if (count > inital) setCount(count - 1);
+  };
+
+  const handleOnAdd = () => {
+    onAdd(count)
+    setInCart(true)
+  }
+
+  return (
+    <>
+      {
+        inCart ?
+        <div style={{display: 'flex', flexDirection: 'column', lineHeight: 2}}>
+        <Link to={'/productos'}>Seguir comprando</Link>
+        <Link to={'/carrito'}>Ver Carrito</Link>
+        </div>
+        :
+        <div>
+        <p>Cantidad: {count}</p>
+        <div className="cartBtns">
+        <button onClick={handleCount}>+</button>
+        <button onClick={restart}>-</button>
+        <button onClick={handleOnAdd}>Agregar al Carrito</button>
+        </div>
+        </div>
+      }
+    </>
+  );
+};
+
+export default ItemCount;

@@ -1,0 +1,36 @@
+.compra{display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;}
+.ordenCompra {
+    width: 200px;
+    border: solid 2px #666;
+    border-radius: 10px;
+    padding: 5px;
+}
+.itemCompra {
+      margin-top: 5px;
+    }
+  
+.pagoCompra {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+    border: solid 2px #666;
+    border-radius: 10px;
+    padding: 5px;
+}
+.pagoCard {
+      margin: auto 0;
+}
+.button {
+        margin-top: 10px;
+        font-size: 15px;
+        border: none;
+        background-color: transparent;
+        padding: 5px;
+        border-radius: 5px;
+        text-decoration: none;
+}

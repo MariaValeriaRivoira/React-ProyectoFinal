@@ -1,31 +1,27 @@
-import { Link } from "react-router-dom"
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Item = ( {product} ) => {
-    return (
-        <div            
-            style={{ marginLeft: 100}}
-            className='col-md-3'
-            key={product.id}
-        >   
-            <Link to={`/detail/${product.id}`} >
-                
-                <div className="card w-100 mt-5" >
-                    <div className="card-header">
-                        {`${product.name} - ${product.categoria}`}
-                    </div>
-                    <div className="card-body">
-                        <img src={product.foto} alt='' className='w-50' />
-                        {product.price}                                                            
-                    </div>
-                                
-                </div>
 
-            </Link>
-                            
-            
-        </div>  
-    ) 
-  
-}
+import "../../containers/ItemListContainer/contenedor-productos.css";
 
-export default Item
+const Item = ({ data }) => {
+
+  console.log(data.name)
+
+
+  return (
+    <div  className="item">
+      
+      <p>{data.name}</p>
+      <div className="zoom">
+        <img src={data.foto} />
+      </div>
+      <p>${data.price}</p>
+      <Link to={`/productos/${data.id}`}>Más Info</Link>
+   
+    </div>
+  );
+};
+
+export default Item;
+

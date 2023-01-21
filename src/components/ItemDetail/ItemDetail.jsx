@@ -1,29 +1,58 @@
-import { useCartContext } from "../../context/CartContext"
-import { ItemCount } from "../ItemCount/ItemCount"
+import React from "react";
+import { useCartContext } from "../../context/CartContext";
+import ItemCount from "../ItemCount/ItemCount";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import './ItemDetail.css';
 
-const ItemDetail = ({ product }) => {
-    const { agregarCarrito, cartList } = useCartContext()
-    const onAdd= (cantidad) => {
-        alert(`Cantidad de productos seleccionados: ${cantidad}`)
-        agregarCarrito( { ...product, cantidad })
+const ItemDetail = ({ data }) => {
+  const { agregarCarrito, buscarItem } = useCartContext();
+
+  const notify = () => toast("Agregado al carrito");
+  const excess = () =>
+    toast.warn("No se pudo agregar, no hay suficiente stock");
+
+  const onAdd = (cantidad) => {
+    if (
+      !!buscarItem(data.id) &&
+      data.stock < buscarItem(data.id).cantidad + cantidad
+    ) {
+      excess();
+    } else {
+      agregarCarrito({ ...data, cantidad });
+      notify();
     }
-    return (
-        <div className="row">
-            <div className="col m-5">
-                <h2>Nombre: {product.name}</h2>
-                <img src={product.foto} className='w-50' alt="imágen del producto" />
-                <h4>Categoría: {product.categoria}</h4>
-                <h4>Precio: {product.price}</h4>
-            </div>
-            <div>
-            <ItemCount 
-                stock={10}
-                initial={1}
-                onAdd={onAdd}
-            />
-            </div>
-        </div>
-    )
-}
+  };
 
-export default ItemDetail
+  
+  return (
+    <div className="item-detail">
+      <img src={data.foto} />
+
+      <div className="detalle">
+          <p>{data.categotia}</p>
+          <p>{data.name}</p>
+          
+          <p>${data.price}</p>
+          {data.stock === 1 ? <strong>¡Último Disponible!</strong> : ""}
+          <p>Stock: {data.stock}</p>
+
+          {data.stock === 0 ? (
+            <button disabled>Agregar al carrito</button>
+          ) : (
+            <ItemCount stock={data.stock} inintial={1} onAdd={onAdd} />
+          )}
+          <ToastContainer
+            autoClose={1000}
+            hideProgressBar={true}
+            theme="dark"
+            draggable={false}
+            position="bottom-right"
+          />
+      </div>
+
+    </div>
+  );
+};
+
+export default ItemDetail;

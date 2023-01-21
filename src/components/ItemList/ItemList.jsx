@@ -1,15 +1,29 @@
-import Item from "../Item/Item"
+import React from "react";
+import { Link } from "react-router-dom";
 
-const ItemList = ({ products }) => {
+
+import '../../containers/ItemListContainer/contenedor-productos.css'
+
+const ItemList = ({arr}) => {
+  
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'row',
-      flexWrap: 'wrap'
-    }}>
-      {products.map( product =>  <Item product={product}  />)}
-    </div>  
-  )
-}
+    <>
+      {arr.map((e) => {
+        <div className="item">
+          <div className="zoom">
+            <img src={e.foto} />
+          </div>
+          <p>{e.name}</p>
+          <p>${e.price}</p>
+          <Link to={`/productos/${e.id}`}>Más Info</Link>
+          
+         
+        </div>;
+    
+        
+      })}
+    </>
+  );
+};
 
-export default ItemList
+export default ItemList;

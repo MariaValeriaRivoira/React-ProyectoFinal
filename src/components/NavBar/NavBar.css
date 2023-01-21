@@ -1,3 +1,120 @@
-nav{
+.navbar{
     background-color: rgb(245, 147, 243);
+    padding: 10px;
+
+}    
+nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: rgb(250, 237, 252);
 }
+fa-bars {
+      display: none;
+}
+
+.brand a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+     
+}
+.brand a h2 {
+      color: black;
+
+      
+}
+.brand img {
+      margin-right: 5px;
+}
+      
+ul {
+      display: flex;
+      gap: 10px;
+}
+ul li {
+      list-style: none;
+      background-color: #fff;
+      border-radius: 3rem;
+}
+ul a {
+      
+      text-decoration: none;
+      color: rgb(217, 50, 161);
+      font-style: oblique;
+      font-weight: bold;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.items.categorias {
+      position: relative;
+}          
+.items.categorias ul {
+      display: none;
+}
+.items.categorias.show {
+      display: block;
+      padding: 5px 15px;
+      position: absolute;
+      background-color: #444;
+}
+
+.userConfig li a i {
+    color: aquamarine;
+             
+}
+.userConfig.cart {
+      position: relative;
+
+}
+.userConfig p {
+      background-color: #e33;
+      padding: 2.5px;
+      border-radius: 10px;
+      position: absolute;
+      top: 20px;
+      width: 15px;
+      display: flex;
+      justify-content: center;
+
+}
+.userConfig.mode {
+      height: 20px;
+      width: 20px;
+      background-color: #fff;
+      border-radius: 100px;
+      position: relative;
+}
+.logo{
+      width: 40px;
+      background-color: white;
+      border-radius: 100px;
+      padding: 5px;
+}
+    
+  
+@media (max-width: 520px) {
+      .navbar{
+          padding: 10px 10px 20px 10px;
+      }
+      nav {
+        justify-content: space-between;
+        flex-direction: column;
+      }
+      .brand {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+      }
+      ul {
+          display: none;
+          padding: 10px;
+      }
+      .fa-bars {
+          display: block;
+      }
+      .show {
+          display: flex;
+      }
+}
+    

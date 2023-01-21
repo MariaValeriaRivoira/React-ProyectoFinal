@@ -1,0 +1,19 @@
+.estilo-contenedor2{    
+    width: 100%;
+    background-color: rgb(249, 191, 245);
+    min-height: 78vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+.estilo-contenedor2 img{
+    width: 60%;
+ 
+}
+.estilo-contenedor2 h2{
+    font-size: 3rem;
+    font-style: oblique;
+    font-family:'Times New Roman', Times, serif
+}

@@ -1,1 +1,19 @@
 
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    
+  }
+
+
+  :root {
+    --main-color: #7c1967;
+    --sec-color: #8a338e;
+    --ter-color: #a953a1;
+    --comp-uno: #ef8fed;
+    --comp-dos: #f1c9e6;
+}
+
+
+
