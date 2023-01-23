@@ -35,7 +35,7 @@ const NavBar = () => {
       <nav>
         <div className="brand">
           <Link to={"/"}>
-            <img className="logo" src="/public/flor.png"></img>
+            <img className="logo" src="https://thumbs2.imgbox.com/15/a7/DxaC3d9b_t.png"></img>
           </Link>
           <h2>Perfumeria Hoy</h2>
           

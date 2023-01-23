@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
 
 
 import "../../containers/ItemListContainer/contenedor-productos.css";
 
 const Item = ({ data }) => {
-
-  console.log(data.name)
 
 
   return (

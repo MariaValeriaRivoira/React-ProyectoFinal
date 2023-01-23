@@ -9,7 +9,7 @@ const Inicio = () => {
     return (
         <>
         <div className='estilo-contenedor2'>
-            <img src="../../public/inicio2.png" alt="" />
+            <img src="https://thumbs2.imgbox.com/d2/42/2lglNrqh_t.png" alt="" />
             <h2>Bienvenidos a "Perfumeria Hoy"</h2>
         </div>
         <Footer />

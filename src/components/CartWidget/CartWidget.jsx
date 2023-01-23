@@ -8,8 +8,9 @@ const CartWidget = ({ count }) => {
       <li className='cart'>
         <Link to='/carrito'>
           <img src="/public/carritoCompras.png" />
-          <h3>{count}</h3>
          
+            <h3>{count}</h3>
+          
         </Link>
       </li>
   );

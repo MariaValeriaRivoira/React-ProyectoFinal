@@ -35,7 +35,7 @@ const ItemListContainer = () => {
       }
     });
   }
-
+ 
   const cambio = (e) => {
     if (e.target.value === "next" && posicion != btnCount.length - 1) {
       setPosicion(posicion + 1);
@@ -56,6 +56,7 @@ const ItemListContainer = () => {
 
   return (
     <>
+     
       <div className="estilo-contenedor">
         {loading ? "" : <h2>Productos</h2>}
 
@@ -65,7 +66,9 @@ const ItemListContainer = () => {
           <div className="contenedor-productos productosContainer">
             {current.map((e, i) => (
               <Item key={i} data={e} />
+              
             ))}
+           
           </div>
         )}
 

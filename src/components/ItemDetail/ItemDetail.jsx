@@ -23,7 +23,7 @@ const ItemDetail = ({ data }) => {
       notify();
     }
   };
-
+  console.log(data.name)
   
   return (
     <div className="item-detail">
