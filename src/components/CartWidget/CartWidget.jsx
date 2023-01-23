@@ -7,7 +7,7 @@ const CartWidget = ({ count }) => {
   return (
       <li className='cart'>
         <Link to='/carrito'>
-          <img src="https://drive.google.com/file/d/1hAy4N1WnLRKUGhOPs9iLWBbkx5hLcT34/view?usp=sharing" />
+          <img src="https://images2.imgbox.com/d4/d5/1yYgDNrR_o.png" />
          
             <h3>{count}</h3>
           
