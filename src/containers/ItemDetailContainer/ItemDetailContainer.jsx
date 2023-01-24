@@ -10,27 +10,38 @@ import './estilo-contenedor.css';
 
 const ItemDetailContainer = ()=>{
 
-    const [producto, setProducto]=useState({})
-    const { id } = useParams()
-    
+    const [data, setData]=useState({})
+    const { productoId } = useParams()
+    console.log('itc')
     useEffect(() => {
         const db = getFirestore();
-        const queryProducto = doc(db, "productos", id);
+        const queryProducto = doc(db, "productos", productoId);
         getDoc(queryProducto)
-          .then((ans) => setProducto({ id: ans.id, ...ans.data() }))
+          .then((ans) => setData({ id: ans.id, ...ans.data() }))
           .catch((e) => console.log(e))
     
-      }, [id]);
+      }, [productoId]);
 
    
     return (
         <>
-        
         <div className="estilo-contenedor">
         
-            <ItemDetail data={producto} /> :
+        
+        {
+            data.id?
+            <ItemDetail data={data} /> :
             <Cargando />
+        } 
+        <br />
+        <br />
+        {
+            data.id?
+            <Displayed actual={data.name} /> :
+            ''
+        }   
         </div>
+
         <Footer />
 
         </>

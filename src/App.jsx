@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Inicio from "./pasos/Inicio";
 import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ItemDetailContainer from "./containers/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer";
 import Buscar from "./pasos/Buscar";
 import { CartContextProvider } from "./context/CartContext";
 import CartContainer from "./containers/CartContainer/CartContainer";
@@ -25,7 +25,7 @@ function App() {
             <Route index path="/" element={<Inicio />} />
             <Route path="/productos" element={<ItemListContainer />} />
             <Route path="/categoria/:categoria" element={<ItemListContainer />} />
-            <Route path="/productos/:id" element={<ItemDetailContainer />} />
+            <Route path="/productos/:productoId" element={<ItemDetailContainer />} />
             <Route path="/carrito" element={<CartContainer />} />
             <Route path="/buscar" element={<Buscar />} />
             <Route path="/login" element={<Login />} />

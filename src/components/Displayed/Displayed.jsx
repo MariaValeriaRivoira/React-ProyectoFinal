@@ -5,7 +5,7 @@ const Displayed = ({actual}) => {
     return (
         <div className='displayed'
         style={{
-            backgroundColor: '#222',
+            backgroundColor: 'white',
             display: 'flex',
             justifyContent: 'center',
             paddingTop: 10,

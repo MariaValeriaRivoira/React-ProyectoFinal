@@ -6,6 +6,9 @@ import "react-toastify/dist/ReactToastify.css";
 import './ItemDetail.css';
 
 const ItemDetail = ({ data }) => {
+
+  console.log('item detail')
+  console.log(data)
   const { agregarCarrito, buscarItem } = useCartContext();
 
   const notify = () => toast("Agregado al carrito");
@@ -23,34 +26,43 @@ const ItemDetail = ({ data }) => {
       notify();
     }
   };
-  console.log(data.name)
+
   
   return (
-    <div className="item-detail">
-      <img src={data.foto} />
+    
 
-      <div className="detalle">
-          <p>{data.categotia}</p>
-          <p>{data.name}</p>
-          
-          <p>${data.price}</p>
-          {data.stock === 1 ? <strong>¡Último Disponible!</strong> : ""}
-          <p>Stock: {data.stock}</p>
+    <div className="div-itemdetail">
+       
+        <h2>{data.name}</h2>
+        
+        <div className="item-detail">
+          <div>
+            <img src={data.foto} />
+            <h3>${data.price}</h3>
+          </div>
+          <div className="detalle">
+           
+              
+              
+              {data.stock === 1 ? <strong>¡Último Disponible!</strong> : ""}
+              <p>(Stock: {data.stock})</p>
+              <div className="div-count">
+                  {data.stock === 0 ? (
+                    <button disabled>Agregar al carrito</button>
+                  ) : (
+                    <ItemCount stock={data.stock} inintial={1} onAdd={onAdd} />
+                  )}
+              </div>
+              <ToastContainer
+                autoClose={1000}
+                hideProgressBar={true}
+                theme="dark"
+                draggable={false}
+                position="bottom-right"
+              />
+          </div>
 
-          {data.stock === 0 ? (
-            <button disabled>Agregar al carrito</button>
-          ) : (
-            <ItemCount stock={data.stock} inintial={1} onAdd={onAdd} />
-          )}
-          <ToastContainer
-            autoClose={1000}
-            hideProgressBar={true}
-            theme="dark"
-            draggable={false}
-            position="bottom-right"
-          />
-      </div>
-
+        </div>
     </div>
   );
 };
