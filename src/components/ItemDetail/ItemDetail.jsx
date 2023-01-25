@@ -7,8 +7,7 @@ import './ItemDetail.css';
 
 const ItemDetail = ({ data }) => {
 
-  console.log('item detail')
-  console.log(data)
+
   const { agregarCarrito, buscarItem } = useCartContext();
 
   const notify = () => toast("Agregado al carrito");
@@ -54,11 +53,11 @@ const ItemDetail = ({ data }) => {
                   )}
               </div>
               <ToastContainer
-                autoClose={1000}
+                autoClose={2000}
                 hideProgressBar={true}
-                theme="dark"
+                theme="light"
                 draggable={false}
-                position="bottom-right"
+                position="bottom-left"
               />
           </div>
 

@@ -11,7 +11,7 @@ const Comprar = () => {
     return (
         <>
          <div className='estilo-contenedor'>
-            <ControlCompra data={cartList} />
+            <Compra data={cartList} />
          </div>
          
          <Footer />

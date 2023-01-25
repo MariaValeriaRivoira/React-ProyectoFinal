@@ -23,7 +23,7 @@ const CartContainer = () => {
   let total = 0;
 
   cartList.map((e) => {
-    let suma = Number(precio[formato.indexOf(e.formato)]) * Number(e.cantidad);
+    let suma = Number(e.price) * Number(e.cantidad);
     total = total + suma;
   });
 
@@ -87,98 +87,113 @@ const CartContainer = () => {
 
   return (
     <>
+      
       <div className="estilo-contenedor">
         <h2>Carrito</h2>
-        {cartList.length === 0 ? (
-          "¡¡¡Sin productos en el carrito!!!"
-        ) : (
-          <ul className="cartList">
-            {cartList.map((e) => (
-              <li key={e.id}>
-                <img src={e.foto} alt="" />
-                <div className="itemsCart">
-                  <p>{e.name}</p>
-                  <p>Cantidad: {e.cantidad}</p>
-                  <p>Unidad: ${e.price}</p>
-                </div>
-                <button className="cartDelete" onClick={() => borrar(e.id)}>
-                  {" "}
-                  X{" "}
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-        {cartList.length === 0 ? (
-          <Link className="link-ver" style={{ marginTop: 70 }} to={"/productos"}>
-            Ir a ver Productos
-          </Link>
-        ) : (
-          <>
-            <p style={{ marginTop: 20 }}>Total: ${total}</p>
+        <br />
+        <div className="conte-Cart">
+            <div>
+                
+                
+                {cartList.length === 0 ? (
+                  "¡¡¡Sin productos en el carrito!!!"
+                ) : (
+                  <ul className="cartList">
+                    {cartList.map((e) => (
+                      <li key={e.id}>
+                        <img src={e.foto} alt="" />
+                        <div className="itemsCart">
+                          <p>{e.name}</p>
+                          <p>Cantidad: {e.cantidad}</p>
+                          <p>Unidad: ${e.price}</p>
+                        </div>
+                        <button className="cartDelete" onClick={() => borrar(e.id)}>
+                          {" "}
+                          Eliminar Producto{" "}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+            </div>
+            <br />
+            <div>
+          
+                  {cartList.length === 0 ? (
+                    <Link className="link-ver" style={{ marginTop: 70 }} to={"/productos"}>
+                      Ir a ver Productos
+                    </Link>
+                  ) : (
+                    <>
+                      <h3 style={{ marginTop: 20 }}>Total: ${total}</h3>
 
-            <button className="cartBtn" onClick={vaciarCarrito}>
-              Vaciar Carrito
-            </button>
+                      <button className="cartBtn" onClick={vaciarCarrito}>
+                        Vaciar Carrito
+                      </button>
 
-            <button onClick={checkUser} className="cartBtn">
-              Terminar Compra
-            </button>
+                      <button onClick={checkUser} className="cartBtn">
+                        Terminar Compra
+                      </button>
+            
 
-            <section className="notUserOrder">
-              {isGenerated ? (
-                ""
-              ) : (
-                <form>
-                  <p>Nombre y Apellido:</p>
-                  <input
-                    onChange={(e) => setNames(e.target.value)}
-                    value={names}
-                  />
+              
+                    <section className="notUserOrder">
+                      {isGenerated ? (
+                        ""
+                      ) : (
+                        <form>
+                          <p>Nombre y Apellido:</p>
+                          <input
+                            onChange={(e) => setNames(e.target.value)}
+                            value={names}
+                          />
 
-                  <p>Telefono:</p>
-                  <input
-                    onChange={(e) => setPhone(e.target.value)}
-                    type={"number"}
-                    value={phone}
-                  />
+                          <p>Telefono:</p>
+                          <input
+                            onChange={(e) => setPhone(e.target.value)}
+                            type={"number"}
+                            value={phone}
+                          />
 
-                  <p>Email: </p>
-                  <input
-                    onChange={(e) => setEmail(e.target.value)}
-                    type={"email"}
-                    value={email}
-                  />
+                          <p>Email: </p>
+                          <input
+                            onChange={(e) => setEmail(e.target.value)}
+                            type={"email"}
+                            value={email}
+                          />
 
-                  <p>Repetir email: </p>
-                  <input
-                    onChange={(e) => setRepeat(e.target.value)}
-                    type={"email"}
-                    value={repeatEmail}
-                  />
-                  <div>
-                    <button type={"submit"} onClick={getOrder}>
-                      Generar Pedido
-                    </button>
-                  </div>
-                </form>
-              )}
-            </section>
-          </>
-        )}
-        <ToastContainer
-                autoClose={1000}
-                hideProgressBar={true}
-                theme="dark"
-                draggable={false}
-                position="bottom-right"
-              />
-              <Log
-                estado={log}
-                onClose={handleClose}
-                msj={msj}
-                adicional={extra}
-              />
+                          <p>Repetir email: </p>
+                          <input
+                            onChange={(e) => setRepeat(e.target.value)}
+                            type={"email"}
+                            value={repeatEmail}
+                          />
+                          <div>
+                            <button type={"submit"} onClick={getOrder}>
+                              Generar Pedido
+                            </button>
+                          </div>
+                        </form>
+                      )}
+                    </section>
+              
+                    </>
+                  )}
+          </div>
+          <ToastContainer
+                  autoClose={1000}
+                  hideProgressBar={true}
+                  theme="light"
+                  draggable={false}
+                  position="bottom-left"
+                />
+                <Log
+                  estado={log}
+                  onClose={handleClose}
+                  msj={msj}
+                  adicional={extra}
+                />
+          </div>
       </div>
       <Footer />
     </>

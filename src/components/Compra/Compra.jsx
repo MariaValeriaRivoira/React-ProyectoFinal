@@ -69,9 +69,9 @@ const Compra = ({ data }) => {
       <ToastContainer
         autoClose={1000}
         hideProgressBar={true}
-        theme="dark"
+        theme="light"
         draggable={false}
-        position="bottom-right"
+        position="bottom-left"
       />
     </div>
   );

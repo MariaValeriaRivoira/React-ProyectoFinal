@@ -1,3 +1,9 @@
+.login{
+      margin-top: 3rem;
+      padding: .3rem;
+    
+}
+
 .login.modal {
     width: 300px;
     height: 100px;
@@ -5,7 +11,7 @@
     left: 50%;
     top: 40%;
     transform: translate(-50%, -50%);
-    background-color: #545454;
+    background-color: #9e467c;
     display: flex;
     flex-direction: column;
     justify-content: center;

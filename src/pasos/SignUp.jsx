@@ -91,7 +91,7 @@ const SignUp = () => {
             <ToastContainer
               autoClose={1000}
               hideProgressBar={true}
-              theme="dark"
+              theme="light"
               draggable={false}
               position="bottom-right"
             />
