@@ -59,15 +59,15 @@ const Login = () => {
       <div className="estilo-contenedor">
         {online != null ? (
           <section className="userProfile">
-            <img
-              src={online.photoURL ? online.photoURL : "/logo.png"}
-              alt="foto de perfil"
-            />
+            
             <div className="infoProfile">
               <p>Bienvenido, {online.displayName}</p>
-              <Link to={`/${online.uid}/perfil`}>Mi perfil</Link>
-              <button onClick={exit}>Cerrar Sesión</button>
+              <div>
+                <Link to={`/${online.uid}/perfil`}>Mi perfil</Link>
+                <button  onClick={exit}>Cerrar Sesión</button>
+              </div>
             </div>
+            
           </section>
         ) : (
           <>

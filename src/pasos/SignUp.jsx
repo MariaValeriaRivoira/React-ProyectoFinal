@@ -30,6 +30,8 @@ const SignUp = () => {
       setEmail("");
       setPass("");
       setUser("");
+    
+
       toast.success('Registro y acceso exitoso')
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
@@ -50,11 +52,12 @@ const SignUp = () => {
         <div className="link-volver">
           <Link  to={'/login'}><img src="/public/volver.png"></img></Link>
         </div>
-        <h2>Registrate</h2>
-        <h3>Ingresa tus datos</h3>
+        
         {
           auth.currentUser !== null ?
-          'Ya te encontrás registrado, volver' : 
+         
+
+          <h1 style={{background:'white', color:'red'}} > "Registrado exitosamente"... </h1> : 
           <form>
           <div className="formControl">
             <p>Usuario:</p>
@@ -89,7 +92,7 @@ const SignUp = () => {
           <div className="formControl">
             <button onClick={sign}>Registrarse</button>
             <ToastContainer
-              autoClose={1000}
+              autoClose={2000}
               hideProgressBar={true}
               theme="light"
               draggable={false}

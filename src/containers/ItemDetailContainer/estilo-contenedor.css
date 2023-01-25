@@ -154,25 +154,43 @@ form select {
   
 .userProfile {
     padding: 5px;
-    background-color: #666;
+   
     min-width: 300px;
-    display: flex;
+   
     align-items: center;
     justify-content: space-around;
     gap: 20px;
     border-radius: 5px;
 }
-.userProfile.infoProfile a {
-        text-decoration: none;
-        font-size: 14px;
-        width: 100%;
-        padding: 5px;
-        margin-top: 5px;
+.infoProfile a {
+       
+      font-size: 20px;
+      padding: .3rem; 
+
+      background-color: rgb(200, 90, 240)!important;
+      border-style: solid!important;
+      border-color: #fff!important;
+      margin-top: 3rem!important;
+      border-radius: 2rem!important;
 
 }
-   
+.infoProfile p {   
+      font-size: 3rem;
+}
+.infoProfile button {
+      padding: 5px;
+      background-color: rgb(200, 90, 240)!important;
+      border-style: solid!important;
+      border-color: #fff!important;
+      margin-top: 3rem!important;
+      border-radius: 2rem!important;
+      padding: .3rem;
+      font-size: 20px;
+
+}
 .userProfile img {
-      width: 100px;
+      width: 40%;
+      margin-top: 40%;
 }
 .userProfile button {
       padding: 5px;
