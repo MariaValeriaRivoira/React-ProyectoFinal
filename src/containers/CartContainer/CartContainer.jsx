@@ -132,51 +132,50 @@ const CartContainer = () => {
                       </button>
 
                       <button onClick={checkUser} className="cartBtn">
-                        Terminar Compra
+                        Realizar Compra
                       </button>
-            
+                      <section className="notUserOrder">
+              {isGenerated ? (
+                ""
+              ) : (
+                <form>
+                  <p>Nombre y Apellido:</p>
+                  <input
+                    onChange={(e) => setNames(e.target.value)}
+                    value={names}
+                  />
+
+                  <p>Telefono:</p>
+                  <input
+                    onChange={(e) => setPhone(e.target.value)}
+                    type={"number"}
+                    value={phone}
+                  />
+
+                  <p>Email: </p>
+                  <input
+                    onChange={(e) => setEmail(e.target.value)}
+                    type={"email"}
+                    value={email}
+                  />
+
+                  <p>Repetir email: </p>
+                  <input
+                    onChange={(e) => setRepeat(e.target.value)}
+                    type={"email"}
+                    value={repeatEmail}
+                  />
+                  <div>
+                    <button type={"submit"} onClick={getOrder}>
+                      Generar Pedido
+                    </button>
+                  </div>
+                </form>
+              )}
+            </section>
 
               
-                    <section className="notUserOrder">
-                      {isGenerated ? (
-                        ""
-                      ) : (
-                        <form>
-                          <p>Nombre y Apellido:</p>
-                          <input
-                            onChange={(e) => setNames(e.target.value)}
-                            value={names}
-                          />
-
-                          <p>Telefono:</p>
-                          <input
-                            onChange={(e) => setPhone(e.target.value)}
-                            type={"number"}
-                            value={phone}
-                          />
-
-                          <p>Email: </p>
-                          <input
-                            onChange={(e) => setEmail(e.target.value)}
-                            type={"email"}
-                            value={email}
-                          />
-
-                          <p>Repetir email: </p>
-                          <input
-                            onChange={(e) => setRepeat(e.target.value)}
-                            type={"email"}
-                            value={repeatEmail}
-                          />
-                          <div>
-                            <button type={"submit"} onClick={getOrder}>
-                              Generar Pedido
-                            </button>
-                          </div>
-                        </form>
-                      )}
-                    </section>
-              
+                   
                     </>
                   )}
           </div>

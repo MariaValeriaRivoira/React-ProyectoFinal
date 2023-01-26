@@ -26,7 +26,7 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, pass);
       const name = await userName()
       setOnline(name)
-      toast.success(`Acceso exitoso`)
+      
       setError("");
     } catch (error) {
       if (error.code === "auth/wrong-password") {
@@ -61,9 +61,9 @@ const Login = () => {
           <section className="userProfile">
             
             <div className="infoProfile">
-              <p>Bienvenido, {online.displayName}</p>
+              <p>Hola, {online.displayName}</p>
               <div>
-                <Link to={`/${online.uid}/perfil`}>Mi perfil</Link>
+                
                 <button  onClick={exit}>Cerrar Sesión</button>
               </div>
             </div>

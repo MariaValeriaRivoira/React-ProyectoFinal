@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
-import { auth } from "../../firebase/config.js";
+import { auth } from "../../firebase/config";
 import { onAuthStateChanged } from "firebase/auth";
 import './NavBar.css';
 
@@ -63,11 +63,16 @@ const NavBar = () => {
           
         
           {online ? (
-            <li>
-              <Link to={online ? `/${online.uid}/perfil` : "/login"}>
-                <i className="fa-solid fa-user" />
-              </Link>
-            </li>
+              <div className="div-persona"> 
+                  <Link to={online ? `/${online.uid}/perfil` : "/login"}>
+                      <img src="https://images2.imgbox.com/66/f9/VcTqkJUj_o.png"  alt="persona" />
+
+                  </Link>
+
+                  <div>
+                      {online.displayName}
+                  </div>
+              </div>
           ) : (
             ""
           )}
