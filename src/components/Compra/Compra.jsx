@@ -27,13 +27,13 @@ const Compra = ({ data }) => {
     if (total === 0) {
       toast.error('Sin productos en el carrito')
     } else if (saldo < total) {
-      toast.error("Sin saldo suficiente para realizar esta compra");
+      toast.error("No dispones de saldo");
     } else {
       await updateDoc(doc(db, "user", user.id), {
         saldo: saldo - total,
         compra: arrayUnion(...cartList)
       });
-      toast.success("Operación exitosa");
+      toast.success("Compra realizada ");
       setActual(saldoActual - total)
       vaciarCarrito();
     }
@@ -44,16 +44,9 @@ const Compra = ({ data }) => {
 
   return (
     <div className="compra">
-      <section className="pagoCompra">
-        <h4>Pago</h4>
-        <div className="pagoCard">
-          <p>Saldo en la cuenta: ${loading ? 0 : saldoActual}</p>
-          <button onClick={onBuy}>Finalizar Compra</button>
-        </div>
-      </section>
-
+      
       <section className="ordenCompra">
-        <h4 style={{ marginBottom: 15 }}>Orden de compra</h4>
+      
         {data.map((e) => (
           <div key={e.id} className="itemCompra">
             <p>x{e.cantidad} {e.nombre}</p>
@@ -63,15 +56,25 @@ const Compra = ({ data }) => {
         {data.map((e) => {
           total += e.precio * e.cantidad;
         })}
-        <p style={{ marginTop: 20 }}>Total: ${total}</p>
+        <h2 style={{ marginTop: 20 }}>Total a Pagar: ${total}</h2>
+      </section><section className="pagoCompra">
+       
+        <div className="pagoCard">
+          <h3>Saldo en la cuenta: ${loading ? 0 : saldoActual}</h3>
+          <div className="div-button">
+            <button onClick={onBuy}>Pagar</button>
+          </div>
+        </div>
       </section>
 
+      
+
       <ToastContainer
-        autoClose={1000}
+        autoClose={2000}
         hideProgressBar={true}
         theme="light"
         draggable={false}
-        position="bottom-left"
+        position="bottom-right"
       />
     </div>
   );

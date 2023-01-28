@@ -1,10 +1,10 @@
-.login{
+.login1{
       margin-top: 3rem;
       padding: .3rem;
     
 }
 
-.login.modal {
+.login2 {
     width: 300px;
     height: 100px;
     position: absolute;
@@ -21,7 +21,7 @@
     transition: ease-in-out 0.25s;
     z-index: 2;
 }
-.login.modal.sign {
+.sign {
       margin-top: 10px;
       border: none;
       background-color: transparent;
@@ -30,7 +30,7 @@
       text-decoration: none;
 
 }
-.login.modal.close {
+.close {
       background-color: transparent;
       padding: 5px;
       border: none;

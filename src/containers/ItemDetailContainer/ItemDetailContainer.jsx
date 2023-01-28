@@ -12,7 +12,7 @@ const ItemDetailContainer = ()=>{
 
     const [data, setData]=useState({})
     const { productoId } = useParams()
-    console.log('itc')
+  
     useEffect(() => {
         const db = getFirestore();
         const queryProducto = doc(db, "productos", productoId);

@@ -5,10 +5,10 @@ import { auth } from "../../firebase/config";
 
 import './Log.css';
 
-const Login = ({ estado, onClose, msj, adicional }) => {
+const Log = ({ estado, onClose, msj, adicional }) => {
 
   return (
-    <div className="login"
+    <div className="login1"
       style={
         estado
           ? {
@@ -21,7 +21,7 @@ const Login = ({ estado, onClose, msj, adicional }) => {
       }
     >
       <div
-        className="modal"
+        className="login2"
         style={
           estado
             ? { display: "flex", opacity: "1" }
@@ -40,7 +40,7 @@ const Login = ({ estado, onClose, msj, adicional }) => {
         }
         {
           adicional === 'buy' ?
-          <Link className="sign" to={`/${auth.currentUser.uid}/compra`}>Ir a comprar</Link>
+          <Link className="sign" to={`/${auth.currentUser.uid}/comprar`}>Ir a comprar</Link>
           : ''
         }
       </div>
@@ -48,4 +48,4 @@ const Login = ({ estado, onClose, msj, adicional }) => {
   );
 };
 
-export default Login;
+export default Log;
