@@ -48,12 +48,17 @@ const Perfil = () => {
   return (
     <>
       <div className="estilo-contenedor">
-        <div className="item-detail" style=  "display: flex, flex-direction: column, align-items: center">
-          <p>Saldo: ${saldo != null ? saldoActual : "0"}</p>
+        <div className="item-detail2" >
+          <div className="div-saldo">
+            <h3>Saldo: ${saldo != null ? saldoActual : "0"}</h3>
+            {fecha ? "Disponible" : fecha}
+          </div>
           <button onClick={agregarSaldo}>Agregar Saldo</button>
-          {fecha ? "Disponible" : fecha}
+          
 
-          <section style={{textAlign: 'center', marginTop: 20}} className="historial">
+
+        </div>
+        <section style={{textAlign: 'center', marginTop: 20}} className="historial">
           <h3>Historial:</h3>
             {
                 user != null 
@@ -65,7 +70,6 @@ const Perfil = () => {
                 : ''
             }
           </section>
-        </div>
       </div>
       <Footer />
     </>

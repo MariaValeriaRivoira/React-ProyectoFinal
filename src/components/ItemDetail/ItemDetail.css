@@ -18,6 +18,15 @@
   border-bottom-right-radius: 1.5rem;
   
 }
+.item-detail2 {
+  background-color: rgb(230, 66, 178);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  
+}
 .item-detail img {
   width: 80%;
   margin: 1rem;
@@ -38,6 +47,9 @@
 }
 .div-count{
   margin: 2rem 0;
+}
+.div-saldo{
+  margin: 2rem;
 }
 @media (max-width: 520px) {
     .item-detail {
