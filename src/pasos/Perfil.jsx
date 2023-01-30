@@ -60,11 +60,13 @@ const Perfil = () => {
         </div>
         <section style={{textAlign: 'center', marginTop: 20}} className="historial">
           <h3>Historial:</h3>
+          <hr />
+          <br />
             {
                 user != null 
                 ? user.compra.map(e => (
                     <div key={e.id} className="historialCard">
-                    <p>x{e.cantidad} {e.name}</p>
+                    <p>_ {e.name} x{e.cantidad}</p>
                     </div>
                 ))
                 : ''

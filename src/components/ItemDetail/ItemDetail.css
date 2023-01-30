@@ -51,6 +51,10 @@
 .div-saldo{
   margin: 2rem;
 }
+.historial{
+  background-color: blanchedalmond;
+  padding: 2rem 4rem;
+}
 @media (max-width: 520px) {
     .item-detail {
         flex-direction: column;
