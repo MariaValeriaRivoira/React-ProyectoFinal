@@ -5,7 +5,7 @@
   padding: 3rem;  
 }
 .ordenCompra {
-    width: 200px;
+    width: 300px;
     border-bottom: solid 2px rgb(156, 38, 111);
     border-radius: 10px;
     padding: 5px;
@@ -36,4 +36,9 @@ button {
         padding:.5rem 1rem;
         border-radius: 1rem;
      
+}
+.div-listaProd{
+  background-color: rgb(248, 210, 164);
+  padding: 2rem;
+  border-radius: 1rem;
 }

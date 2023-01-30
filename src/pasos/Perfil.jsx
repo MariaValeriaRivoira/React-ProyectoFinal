@@ -27,7 +27,7 @@ const Perfil = () => {
 
   const agregarSaldo = async () => {
     await updateDoc(doc(db, "user", user.id), {
-      saldo: 1000 + saldo,
+      saldo: 50000 + saldo,
       fecha: new Date()
     });
     setActual(saldo + 1000);

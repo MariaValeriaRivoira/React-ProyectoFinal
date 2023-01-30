@@ -50,7 +50,7 @@ const SignUp = () => {
     <>
       <div className="estilo-contenedor">
         <div className="link-volver">
-          <Link  to={'/login'}><img src="/public/volver.png"></img></Link>
+          <Link  to={'/login'}><img src="https://thumbs2.imgbox.com/cd/3b/kq5b1KRE_t.png"></img></Link>
         </div>
         
         {

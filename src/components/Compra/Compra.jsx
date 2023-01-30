@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 import { auth } from "../../firebase/config";
 import { useCartContext } from "../../context/CartContext";
 import { toast, ToastContainer } from "react-toastify";
 import getUser from "../../hooks/getUser";
 import { getFirestore, updateDoc, doc, arrayUnion } from "firebase/firestore";
-
+import '../../containers/ItemDetailContainer/estilo-contenedor.css'
 import './compra.css';
 
 const Compra = ({ data }) => {
   const { cartList, vaciarCarrito } = useCartContext();
-
+ console.log(data)
   const [user, saldo, fecha, loading] = getUser();
   const [saldoActual, setActual] = useState(0)
 
@@ -43,18 +43,22 @@ const Compra = ({ data }) => {
   
 
   return (
+    
+  
+
     <div className="compra">
       
       <section className="ordenCompra">
-      
+       <div className="div-listaProd">
         {data.map((e) => (
           <div key={e.id} className="itemCompra">
-            <p>x{e.cantidad} {e.nombre}</p>
-            <p>${e.precio}</p>
+            <p>**{e.name} (x{e.cantidad}) </p>
+            <p>${e.price}</p>
           </div>
         ))}
+        </div>
         {data.map((e) => {
-          total += e.precio * e.cantidad;
+          total += e.price * e.cantidad;
         })}
         <h2 style={{ marginTop: 20 }}>Total a Pagar: ${total}</h2>
       </section><section className="pagoCompra">
@@ -66,7 +70,9 @@ const Compra = ({ data }) => {
           </div>
         </div>
       </section>
-
+      <div className="link-volver">
+          <Link  to={'/productos'}><img src="https://thumbs2.imgbox.com/cd/3b/kq5b1KRE_t.png"></img></Link>
+    </div>
       
 
       <ToastContainer

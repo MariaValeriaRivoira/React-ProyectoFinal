@@ -58,8 +58,12 @@ const CartContainer = () => {
       })
      
       setGenerate(true);
-      setLog(true);
-      checkUser();
+      vaciarCarrito();
+      setNames("");
+      setPhone("");
+      setEmail("");
+      setRepeat("");
+      setModal(true);
       
   
     }
@@ -75,12 +79,8 @@ const CartContainer = () => {
       setExtra("sign");
     } else {
       setLog(true);
+      setMsj("Ya está todo listo");
       setExtra("buy");
-      vaciarCarrito();
-      setNames("");
-      setPhone("");
-      setEmail("");
-      setRepeat("");
     }
   };
 
@@ -135,7 +135,9 @@ const CartContainer = () => {
                       <button className="cartBtn" onClick={vaciarCarrito}>
                         Vaciar Carrito
                       </button>
-
+                      <button className="cartBtn" onClick={checkUser} >
+                        Terminar Compra
+                     </button>
                       
                       <section className="notUserOrder">
                         <h2>Llenar los datos para realizar el Pedido</h2>
