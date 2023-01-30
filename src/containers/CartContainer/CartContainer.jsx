@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { addDoc, getFirestore, collection } from "firebase/firestore";
 import GetOrder from "../../hooks/getOrder";
+import Compra from '../../components/Compra/Compra';
 import '../../containers/ItemDetailContainer/estilo-contenedor.css'
 
 const CartContainer = () => {
@@ -52,18 +53,18 @@ const CartContainer = () => {
         fecha: today
       })
       .then((ref) => {
-        setMsj(`Id generado ${ref.id}`)
+        setMsj(`Su número de Pedido es: ${ref.id}`)
+       
       })
+     
       setGenerate(true);
-      vaciarCarrito();
-      setNames("");
-      setPhone("");
-      setEmail("");
-      setRepeat("");
       setLog(true);
+      checkUser();
+      
+  
     }
   };
-
+ 
   const checkUser = () => {
     if (cartList.length === 0) {
       setLog(true);
@@ -74,8 +75,12 @@ const CartContainer = () => {
       setExtra("sign");
     } else {
       setLog(true);
-      setMsj("Listo");
       setExtra("buy");
+      vaciarCarrito();
+      setNames("");
+      setPhone("");
+      setEmail("");
+      setRepeat("");
     }
   };
 
@@ -131,10 +136,9 @@ const CartContainer = () => {
                         Vaciar Carrito
                       </button>
 
-                      <button onClick={checkUser} className="cartBtn">
-                        Realizar Compra
-                      </button>
+                      
                       <section className="notUserOrder">
+                        <h2>Llenar los datos para realizar el Pedido</h2>
               {isGenerated ? (
                 ""
               ) : (
@@ -166,7 +170,7 @@ const CartContainer = () => {
                     value={repeatEmail}
                   />
                   <div>
-                    <button type={"submit"} onClick={getOrder}>
+                    <button  type={"submit"} className="cartBtn" onClick={getOrder}>
                       Generar Pedido
                     </button>
                   </div>

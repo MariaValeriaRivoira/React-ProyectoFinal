@@ -64,6 +64,7 @@ const NavBar = () => {
         
           {online ? (
               <div className="div-persona"> 
+             
                   <Link to={online ? `/${online.uid}/perfil` : "/login"}>
                       <img src="https://images2.imgbox.com/66/f9/VcTqkJUj_o.png"  alt="persona" />
 

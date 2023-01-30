@@ -25,14 +25,14 @@
     border-radius: 10px;
     padding: 15px;
 }
-.notUserOrder button {
+/* .notUserOrder button {
       background-color: transparent;
       border: solid 2px #fff;
       border-radius: 5px;
       margin-top: 10px;
       padding: 5px;
 
-}
+} */
 .notUserOrder input {
       color: #000;
 }
@@ -121,6 +121,16 @@ h4 {
     width: 30%;
 
 }
+.cartBtn2 {
+      background-color: rgb(172, 49, 112);
+      padding: 5px;
+      border-style: solid;
+      border-color: white;
+      border-width: .5rem;
+      margin-top: 20px;
+  
+  
+  }
 
 form input {
       width: 20rem;
