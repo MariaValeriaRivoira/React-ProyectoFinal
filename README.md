@@ -16,6 +16,14 @@ https://perfumeriahoy.netlify.app/
 
 
 
-Se hizo uso de : Html, Css, Bootstrap, JavaScript, React JS, Firebase, GitHub, Node
+TECNOLOGÍAS USADAS
 
+•	"bootstrap": v5.2.3,
+•	"firebase": v9.15.0,
+•	"react": v18.2.0,
+•	"react-bootstrap": v2.6.0,
+•	"react-dom": v18.2.0,
+•	"react-router-dom": v6.7.0,
+•	"react-toastify": v9.1.1,
+•	"sweetalert2": v11.7.0
 
