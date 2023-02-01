@@ -4,9 +4,13 @@ Título del Proyecto:
                                            Proyecto "Perfumeria Hoy"
 
 
+
+
 Es un ecommerce referido a la venta online de perfumes, cremas y maquillaje. 
 
 Desarrollado para el Proyecto Final del curso React JS- Comisión 37095. A cargo del Profesor Federico Osandon.
+
+
 
 
 
