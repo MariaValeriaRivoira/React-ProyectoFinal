@@ -5,13 +5,13 @@ Título del Proyecto:
 
 
 
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
 Es un ecommerce referido a la venta online de perfumes, cremas y maquillaje. 
 
 Desarrollado para el Proyecto Final del curso React JS- Comisión 37095. A cargo del Profesor Federico Osandon.
 
 
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 Links al Proyecto de "Perfumeria Hoy"
@@ -22,10 +22,11 @@ https://github.com/MariaValeriaRivoira/React-ProyectoFinal
 Ruta al deploy:
 https://perfumeriahoy.netlify.app/
 
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 TECNOLOGÍAS USADAS
+___________________
 
 •	"bootstrap": v5.2.3,
 
@@ -53,6 +54,6 @@ TECNOLOGÍAS USADAS
 
 
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------                                             
                                              
-                                             
-                                             AUTOR: María Valeria Rivoira
+                                                          AUTOR: María Valeria Rivoira
