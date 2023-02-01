@@ -41,19 +41,19 @@ const NavBar = () => {
           
           
         </div>
-        <ul className={current ? "items show" : "items"}>
+        <ul className={current ? "items show" : "items"} >
           
-          <li>
+          <li className="div-cat">
             <Link to={"/productos"}>Todos los Productos</Link>
           </li>
           
-          <li>
+          <li className="div-cat">
               <Link to={"/categoria/perfumes"}>Perfumes</Link>
           </li>
-          <li>
+          <li className="div-cat">
                 <Link to={"/categoria/cremas"}>Cremas</Link>
           </li>
-          <li>
+          <li className="div-cat">
                 <Link to={"/categoria/maquillajes"}>Maquillajes</Link>
           </li>
         </ul>
