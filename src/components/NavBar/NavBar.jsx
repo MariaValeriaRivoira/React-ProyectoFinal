@@ -59,7 +59,7 @@ const NavBar = () => {
         </ul>
           
         
-        <ul className={current ? "userConfig show" : "userConfig"}>
+        <ul className="div-carr">
           
         
           {online ? (

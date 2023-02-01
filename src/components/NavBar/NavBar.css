@@ -27,7 +27,8 @@ fa-bars {
 .brand img {
       margin-right: 5px;
 }
-      
+    
+
 ul {
       display: flex;
       gap: 10px;
@@ -99,11 +100,11 @@ ul a {
   
 @media (max-width: 520px) {
       .navbar{
+           
           padding: 10px 10px 20px 10px;
       }
       nav {
-        justify-content: space-between;
-        flex-direction: column;
+       display: block;
       }
       .brand {
           display: flex;
@@ -112,8 +113,11 @@ ul a {
           width: 100%;
       }
       ul {
-          display: none;
+            display: block;
           padding: 10px;
+      }
+      .div-carr{
+            display: flex;
       }
       .fa-bars {
           display: block;
