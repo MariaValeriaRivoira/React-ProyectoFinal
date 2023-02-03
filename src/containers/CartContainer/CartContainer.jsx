@@ -53,7 +53,7 @@ const CartContainer = () => {
         fecha: today
       })
       .then((ref) => {
-        setMsj(`Su número de Pedido es: ${ref.id}`)
+        setMsj(`Su id de Pedido es: ${ref.id}`)
        
       })
      
@@ -63,7 +63,7 @@ const CartContainer = () => {
       setPhone("");
       setEmail("");
       setRepeat("");
-      setModal(true);
+      setLog(true);
       
   
     }
